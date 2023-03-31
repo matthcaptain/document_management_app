@@ -10,17 +10,17 @@ class MainScreen extends StatelessWidget {
 
   final tabs = [
     NamedNavigationBarItemWidget(
-      initialLocation: Routes.homeNamedPage,
+      initialLocation: Routes.welcomeNamedPage,
       icon: const Icon(Icons.home),
       label: 'Home',
     ),
     NamedNavigationBarItemWidget(
-      initialLocation: Routes.profileNamedPage,
+      initialLocation: Routes.questionOneNamedPage,
       icon: const Icon(Icons.person),
       label: 'Profile',
     ),
     NamedNavigationBarItemWidget(
-      initialLocation: Routes.settingsNamedPage,
+      initialLocation: Routes.questionTwoNamedPage,
       icon: const Icon(Icons.settings),
       label: 'Setting',
     ),

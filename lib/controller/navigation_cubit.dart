@@ -6,21 +6,21 @@ part 'navigation_state.dart';
 class NavigationCubit extends Cubit<NavigationState> {
   NavigationCubit()
       : super(const NavigationState(
-            bottomNavItems: Routes.homeNamedPage, index: 0));
+            bottomNavItems: Routes.welcomeNamedPage, index: 0));
 
   void getNavBarItem(int index) {
     switch (index) {
       case 0:
         emit(const NavigationState(
-            bottomNavItems: Routes.homeNamedPage, index: 0));
+            bottomNavItems: Routes.welcomeNamedPage, index: 0));
         break;
       case 1:
         emit(const NavigationState(
-            bottomNavItems: Routes.profileNamedPage, index: 1));
+            bottomNavItems: Routes.questionOneNamedPage, index: 1));
         break;
       case 2:
         emit(const NavigationState(
-            bottomNavItems: Routes.settingsNamedPage, index: 2));
+            bottomNavItems: Routes.questionTwoNamedPage, index: 2));
         break;
     }
   }
