@@ -22,6 +22,10 @@ class NavigationCubit extends Cubit<NavigationState> {
         emit(const NavigationState(
             bottomNavItems: Routes.questionTwoNamedPage, index: 2));
         break;
+      case 3:
+        emit(const NavigationState(
+            bottomNavItems: Routes.questionThreeNamedPage, index: 3));
+        break;
     }
   }
 }

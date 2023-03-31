@@ -1,33 +1,37 @@
-import 'package:androidrouting/screens/shared/circle_progress_indicator.dart';
+import 'package:documentdetails/screens/shared/circle_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
+  @override
+  _WelcomeScreen createState() => _WelcomeScreen();
+}
 
+class _WelcomeScreen extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        title: const Text('Information'),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+        actions: [
+          ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+              ),
+              child: const Text(
+                "Skip",
+                style: TextStyle(color: Colors.grey, fontFamily: "Roboto"),
+              ))
+        ],
+      ),
       body: Center(
         child: Column(
           children: <Widget>[
-            const Expanded(
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Information",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: "Roboto",
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
             Expanded(
                 child: Align(
                     alignment: Alignment.center,
@@ -77,7 +81,7 @@ class WelcomeScreen extends StatelessWidget {
                           style: const TextStyle(
                               color: Colors.black,
                               fontFamily: "Montserrat",
-                              fontSize: 23,
+                              fontSize: 17,
                               fontWeight: FontWeight.bold),
                         ),
                       ))),

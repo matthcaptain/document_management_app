@@ -1,4 +1,4 @@
-import 'package:androidrouting/screens/shared/named_nav_bar_item_widget.dart';
+import 'package:documentdetails/screens/shared/named_nav_bar_item_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../core/utils/constants.dart';
@@ -12,17 +12,27 @@ class MainScreen extends StatelessWidget {
     NamedNavigationBarItemWidget(
       initialLocation: Routes.welcomeNamedPage,
       icon: const Icon(Icons.home),
-      label: 'Home',
+      label: 'Welcome',
     ),
     NamedNavigationBarItemWidget(
       initialLocation: Routes.questionOneNamedPage,
       icon: const Icon(Icons.person),
-      label: 'Profile',
+      label: 'QuestionOne',
     ),
     NamedNavigationBarItemWidget(
       initialLocation: Routes.questionTwoNamedPage,
       icon: const Icon(Icons.settings),
-      label: 'Setting',
+      label: 'QuestionTwo',
+    ),
+    NamedNavigationBarItemWidget(
+      initialLocation: Routes.questionTwoNumberInputNamedPage,
+      icon: const Icon(Icons.settings),
+      label: 'QuestionTwoNumberInput',
+    ),
+    NamedNavigationBarItemWidget(
+      initialLocation: Routes.questionThreeNamedPage,
+      icon: const Icon(Icons.settings),
+      label: 'QuestionThreeInput',
     ),
   ];
 

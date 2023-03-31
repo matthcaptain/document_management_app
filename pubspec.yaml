@@ -1,4 +1,4 @@
-name: androidrouting
+name: documentdetails
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -30,6 +30,11 @@ dependencies:
   flutter_bloc: ^8.1.1
   percent_indicator: ^4.2.3
   step_progress_indicator: ^1.0.2
+  dropdown_button2: ^2.0.0
+  flutter_awesome_select: ^6.5.0
+  drop_down_list: ^0.0.4
+  flutter_custom_selector: ^0.0.3
+  awesome_select: ^6.0.0
 
 dev_dependencies:
   flutter_test:
