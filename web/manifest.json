@@ -1,6 +1,6 @@
 {
-    "name": "androidrouting",
-    "short_name": "androidrouting",
+    "name": "documentdetails",
+    "short_name": "documentdetails",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -6,6 +6,7 @@ class Routes {
   static const welcomeNamedPage = '/home';
   static const questionOneNamedPage = '/questionOne';
   static const questionTwoNamedPage = '/questionTwo';
+  static const questionTwoNumberInputNamedPage = '/questionTwoNumberInput';
   static const questionThreeNamedPage = '/questionThree';
   static Widget errorWidget(BuildContext context, GoRouterState state) =>
       const Text("Not found!!!");

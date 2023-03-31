@@ -1,8 +1,10 @@
-import 'package:androidrouting/controller/navigation_cubit.dart';
-import 'package:androidrouting/screens/welcome/welcome_screen.dart';
-import 'package:androidrouting/screens/main_screen.dart';
-import 'package:androidrouting/screens/questionOne/question_one_screen.dart';
-import 'package:androidrouting/screens/questionTwo/question_two_screen.dart';
+import 'package:documentdetails/controller/navigation_cubit.dart';
+import 'package:documentdetails/screens/welcome/welcome_screen.dart';
+import 'package:documentdetails/screens/main_screen.dart';
+import 'package:documentdetails/screens/questionOne/question_one_screen.dart';
+import 'package:documentdetails/screens/questionTwo/question_two_screen.dart';
+import 'package:documentdetails/screens/questionTwo/question_two_number_screen.dart';
+import 'package:documentdetails/screens/questionThree/question_three_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -44,6 +46,17 @@ class AppRouter {
               child: QuestionTwoScreen(),
             ),
           ),
+          GoRoute(
+            path: Routes.questionThreeNamedPage,
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: QuestionThreeScreen(),
+            ),
+          ),
+          GoRoute(
+              path: Routes.questionTwoNumberInputNamedPage,
+              pageBuilder: (context, state) => const NoTransitionPage(
+                    child: QuestionTwoNumberInputScreen(),
+                  )),
         ],
       ),
     ],
