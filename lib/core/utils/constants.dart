@@ -3,11 +3,10 @@ import 'package:go_router/go_router.dart';
 
 class Routes {
   static const root = '/';
-  static const homeNamedPage = '/home';
-  static const homeDetailsNamedPage = 'details';
-  static const profileNamedPage = '/profile';
-  static const profileDetailsNamedPage = 'details';
-  static const settingsNamedPage = '/settings';
+  static const welcomeNamedPage = '/home';
+  static const questionOneNamedPage = '/questionOne';
+  static const questionTwoNamedPage = '/questionTwo';
+  static const questionThreeNamedPage = '/questionThree';
   static Widget errorWidget(BuildContext context, GoRouterState state) =>
       const Text("Not found!!!");
 }
