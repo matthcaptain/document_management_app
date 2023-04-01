@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../shared//progress_title.dart';
-import 'package:flutter_custom_selector/flutter_custom_selector.dart';
+import 'package:country_picker/country_picker.dart';
 
 class QuestionThreeScreen extends StatefulWidget {
   const QuestionThreeScreen({Key? key}) : super(key: key);
@@ -11,19 +11,6 @@ class QuestionThreeScreen extends StatefulWidget {
 
 class _QuestionThreeScreen extends State<QuestionThreeScreen> {
   @override
-  List<String> dataString = [
-    "United Kingdom (UK)",
-    "United States (US)",
-    "Portugal (PT)",
-    "Brasil (BR)",
-    "Turkey",
-    "Brazil",
-    "Tunisia",
-    'Canada'
-  ];
-  String? selectedString;
-  List<String>? selectedDataString;
-
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -33,12 +20,12 @@ class _QuestionThreeScreen extends State<QuestionThreeScreen> {
             onPressed: () => context.go('/home'),
           ),
           centerTitle: true,
-          backgroundColor: Colors.black,
+          backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
           actions: [
             ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
                 ),
                 child: const Text(
                   "Skip",
@@ -52,33 +39,68 @@ class _QuestionThreeScreen extends State<QuestionThreeScreen> {
             children: <Widget>[
               const ProgressTitle(),
               const Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
-              CustomSingleSelectField<String>(
-                items: dataString,
-                title: "Country",
-                onSelectionDone: (value) {
-                  selectedString = value;
-                  setState(() {});
-                },
-                width: double.infinity,
-                selectedItemColor: Color.fromRGBO(248, 100, 197, 1),
-                // decoration: const InputDecoration(
-                //     // enabledBorder: OutlineInputBorder(
-                //     //     borderRadius: BorderRadius.all(Radius.circular(20)),
-                //     //     borderSide: BorderSide(
-                //     //         width: 2, color: Color.fromRGBO(248, 100, 197, 1))),
-                //     // border: OutlineInputBorder(
-                //     //     borderRadius: BorderRadius.all(Radius.circular(20)),
-                //     //     borderSide: BorderSide(
-                //     //         width: 2, color: Color.fromRGBO(248, 100, 197, 1))),
-                //     // focusedBorder: OutlineInputBorder(
-                //     //     borderRadius: BorderRadius.all(Radius.circular(20)),
-
-                //     ),
-                itemAsString: (item) => item,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+              ElevatedButton(
+                  onPressed: () {
+                    showCountryPicker(
+                      context: context,
+                      onSelect: (Country country) {
+                        print("Selct country: , ${country.displayName}");
+                      },
+                      countryListTheme: const CountryListThemeData(
+                        // Optional. Sets the border radius for the bottomsheet.
+                        textStyle: TextStyle(
+                            color: Color.fromRGBO(110, 110, 115, 1),
+                            fontFamily: "Roboto",
+                            fontSize: 20),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40.0),
+                          topRight: Radius.circular(40.0),
+                        ),
+                        backgroundColor: Color.fromRGBO(0, 0, 0, 1),
+                        // Optional. Styles the search field.
+                        inputDecoration: InputDecoration(
+                            hintStyle: TextStyle(
+                              color: Color.fromRGBO(110, 110, 115, 1),
+                            ),
+                            labelStyle: TextStyle(
+                              color: Color.fromRGBO(110, 110, 115, 1),
+                            ),
+                            prefixIconColor: Color.fromRGBO(110, 110, 115, 1),
+                            focusColor: Color.fromRGBO(110, 110, 115, 1),
+                            labelText: 'Search',
+                            hintText: 'Start typing to search',
+                            prefixIcon: Icon(Icons.search),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color.fromRGBO(248, 100, 197, 1),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color.fromRGBO(248, 100, 197, 1),
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color.fromRGBO(248, 100, 197, 1),
+                              ),
+                            )),
+                        // Optional. Styles the text in the search field
+                        searchTextStyle: TextStyle(
+                          color: Color.fromRGBO(110, 110, 115, 1),
+                          fontSize: 18,
+                        ),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromRGBO(29, 29, 31, 1)),
+                  child: const Text(
+                    "Country",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  )),
               Expanded(
                 child: Align(
                     alignment: Alignment.bottomCenter,
@@ -103,10 +125,5 @@ class _QuestionThreeScreen extends State<QuestionThreeScreen> {
             ],
           ),
         ));
-  }
-
-  void _onCountriesSelectionComplete(value) {
-    selectedDataString?.addAll(value);
-    setState(() {});
   }
 }

@@ -19,12 +19,12 @@ class _QuestionOneScreen extends State<QuestionOneScreen> {
             onPressed: () => context.go('/home'),
           ),
           centerTitle: true,
-          backgroundColor: Colors.black,
+          backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
           actions: [
             ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
                 ),
                 child: const Text(
                   "Skip",
@@ -45,7 +45,8 @@ class _QuestionOneScreen extends State<QuestionOneScreen> {
                         child: ElevatedButton(
                           onPressed: () => context.go("/questionTwo"),
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromRGBO(248, 100, 197, 1),
+                              backgroundColor:
+                                  const Color.fromRGBO(248, 100, 197, 1),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
                               ),

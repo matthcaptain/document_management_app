@@ -11,17 +11,17 @@ class QuestionTwoScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Information'),
+          centerTitle: true,
+          backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
           leading: BackButton(
             color: Colors.white,
-            onPressed: () => context.go('/questionOne'),
+            onPressed: () => context.go('/home'),
           ),
-          centerTitle: true,
-          backgroundColor: Colors.black,
           actions: [
             ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
                 ),
                 child: const Text(
                   "Skip",

@@ -16,12 +16,12 @@ class _WelcomeScreen extends State<WelcomeScreen> {
       appBar: AppBar(
         title: const Text('Information'),
         centerTitle: true,
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
         actions: [
           ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
+                backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
               ),
               child: const Text(
                 "Skip",

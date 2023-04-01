@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../shared//progress_title.dart';
 import 'package:flutter/services.dart';
 
 class QuestionTwoNumberInputScreen extends StatelessWidget {
@@ -10,18 +9,18 @@ class QuestionTwoNumberInputScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Information'),
+          title: const Text('Number'),
+          centerTitle: true,
           leading: BackButton(
             color: Colors.white,
-            onPressed: () => context.go('/questionOne'),
+            onPressed: () => context.go('/home'),
           ),
-          centerTitle: true,
-          backgroundColor: Colors.black,
+          backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
           actions: [
             ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
                 ),
                 child: const Text(
                   "Skip",
