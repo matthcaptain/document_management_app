@@ -43,10 +43,12 @@ class _QuestionThreeScreen extends State<QuestionThreeScreen> {
                   onPressed: () {
                     showCountryPicker(
                       context: context,
+                      showWorldWide: true,
                       onSelect: (Country country) {
                         print("Selct country: , ${country.displayName}");
                       },
                       countryListTheme: const CountryListThemeData(
+                        flagSize: 0,
                         // Optional. Sets the border radius for the bottomsheet.
                         textStyle: TextStyle(
                             color: Color.fromRGBO(110, 110, 115, 1),
