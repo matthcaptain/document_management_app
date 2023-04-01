@@ -5,23 +5,22 @@ import 'package:flutter/services.dart';
 
 class QuestionTwoScreen extends StatelessWidget {
   const QuestionTwoScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Information'),
+          centerTitle: true,
+          backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
           leading: BackButton(
             color: Colors.white,
             onPressed: () => context.go('/questionOne'),
           ),
-          centerTitle: true,
-          backgroundColor: Colors.black,
           actions: [
             ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  backgroundColor: const Color.fromRGBO(29, 29, 31, 1),
                 ),
                 child: const Text(
                   "Skip",
@@ -35,28 +34,29 @@ class QuestionTwoScreen extends StatelessWidget {
             children: [
               const ProgressTitle(),
               const Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
-              TextField(
-                autofocus: true,
-                maxLength: 20,
-                inputFormatters: [
-                  FilteringTextInputFormatter.allow(RegExp('[0-9.,]')),
-                ],
-                style: const TextStyle(color: Color.fromRGBO(110, 110, 115, 1)),
-                decoration: const InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        borderSide: BorderSide(
-                            width: 2, color: Color.fromRGBO(248, 100, 197, 1))),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        borderSide: BorderSide(
-                            width: 2, color: Color.fromRGBO(248, 100, 197, 1))),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        borderSide: BorderSide(
-                            width: 2, color: Color.fromRGBO(248, 100, 197, 1))),
-                    hintStyle:
-                        TextStyle(color: Color.fromRGBO(110, 110, 115, 1))),
+              GestureDetector(
+                child: const TextField(
+                  style: TextStyle(color: Color.fromRGBO(110, 110, 115, 1)),
+                  decoration: InputDecoration(
+                      hintText: 'Number',
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          borderSide: BorderSide(
+                              width: 2,
+                              color: Color.fromRGBO(248, 100, 197, 1))),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          borderSide: BorderSide(
+                              width: 2,
+                              color: Color.fromRGBO(248, 100, 197, 1))),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          borderSide: BorderSide(
+                              width: 2,
+                              color: Color.fromRGBO(248, 100, 197, 1))),
+                      hintStyle:
+                          TextStyle(color: Color.fromRGBO(110, 110, 115, 1))),
+                ),
               ),
               Expanded(
                 child: Align(
@@ -65,7 +65,7 @@ class QuestionTwoScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => context.go("/questionOne"),
                           style: ElevatedButton.styleFrom(
                             fixedSize: const Size(100, 50),
                             backgroundColor:

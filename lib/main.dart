@@ -17,7 +17,8 @@ class DocumentDetailsApp extends StatelessWidget {
       title: 'Document Details',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.blue, scaffoldBackgroundColor: Colors.black),
+          primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: const Color.fromRGBO(29, 29, 31, 1)),
     );
   }
 }
